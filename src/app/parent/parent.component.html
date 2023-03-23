@@ -1,0 +1,5 @@
+<h1>Parent component</h1>
+
+<input type="text" [(ngModel)]="currentPrice" />
+
+<app-child [newPrice]="currentPrice" (toparent)="GetChildData($event)"></app-child>
