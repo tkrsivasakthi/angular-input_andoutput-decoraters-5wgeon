@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 export class ParentComponent implements OnInit {
   public test: any;
   constructor() {}
+  showh1: boolean = true;
 
   ngOnInit() {}
 

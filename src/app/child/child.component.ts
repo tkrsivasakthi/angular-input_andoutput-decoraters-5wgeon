@@ -10,9 +10,9 @@ export class ChildComponent implements OnInit {
 
   @Input() public newPrice;
   @Output() public toparent = new EventEmitter<any>();
-  public childdata = 'i am fom child'
+  public childdata = 'i am fom child';
   ngOnInit() {}
-  send(){
+  send() {
     this.toparent.emit(this.childdata);
   }
 }
