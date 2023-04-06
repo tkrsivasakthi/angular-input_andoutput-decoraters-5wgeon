@@ -13,12 +13,18 @@ export class ParentComponent implements OnInit {
   ngOnInit() {}
 
   public currentPrice: string = '500';
+  public sampledata: string;
 
   onchange(value) {
     this.currentPrice = value;
   }
 
+  //get data from children component
   GetChildData(v) {
     alert(v);
+  }
+
+  update(user) {
+    console.log(user.value);
   }
 }

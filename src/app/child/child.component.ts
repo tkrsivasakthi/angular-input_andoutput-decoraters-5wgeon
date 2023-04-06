@@ -9,6 +9,7 @@ export class ChildComponent implements OnInit {
   constructor() {}
 
   @Input() public newPrice;
+  @Input() public fromParent;
   @Output() public toparent = new EventEmitter<any>();
   public childdata = 'i am fom child';
   ngOnInit() {}
