@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-parent',
@@ -26,5 +28,15 @@ export class ParentComponent implements OnInit {
 
   update(user) {
     console.log(user.value);
+  }
+
+  // create form control using fg and fc
+  jobForm = new FormGroup({
+    username: new FormControl(''),
+    contact: new FormControl(''),
+  });
+  // get the reactive form values from view
+  save() {
+    console.log(this.jobForm.value);
   }
 }
