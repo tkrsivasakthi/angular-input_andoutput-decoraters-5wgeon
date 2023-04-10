@@ -7,9 +7,10 @@ import { HelloComponent } from './hello.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, FormBuilder],
   declarations: [AppComponent, HelloComponent, ParentComponent, ChildComponent],
   bootstrap: [AppComponent],
 })

@@ -24,12 +24,22 @@
   <button type="submit" [disabled]="user.invalid">Submit</button>
 </form>
 
-<h1>********************************</h1>
+<h1>**********Using Fc and FG**********************</h1>
 <form [formGroup]="jobForm" (ngSubmit)="save()">
   <label for="username">Username:</label>
   <input type="text" name="username" formControlName="username" />
   <br />
   <label for="contact">Contact</label>
-  <input type="text" name="place" formControlName="contact" /><br />
+  <input type="text" name="contact" formControlName="contact" /><br />
+  <button type="submit">Submit</button>
+</form>
+
+<h1>**********Using Form Builder**********************</h1>
+<form [formGroup]="jobForma" (ngSubmit)="save()">
+  <label for="username">Username:</label>
+  <input type="text" name="username" formControlName="username" />
+  <br />
+  <label for="contact">Contact</label>
+  <input type="text" name="contact" formControlName="contact" /><br />
   <button type="submit">Submit</button>
 </form>
