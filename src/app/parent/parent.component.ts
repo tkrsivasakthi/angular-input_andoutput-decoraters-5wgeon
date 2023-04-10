@@ -13,10 +13,13 @@ import { FormsModule } from '@angular/forms';
 })
 export class ParentComponent implements OnInit {
   public test: any;
+  public jobForma: FormGroup;
   constructor(private formBuilder: FormBuilder) {}
   showh1: boolean = true;
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.initializeForm();
+  }
 
   public currentPrice: string = '500';
   public sampledata: string;
@@ -39,14 +42,23 @@ export class ParentComponent implements OnInit {
     username: new FormControl(''),
     contact: new FormControl(''),
   });
-
-  //using Form builder
-  jobForma = this.formBuilder.group({
-    username: [''],
-    contact: [''],
-  });
   // get the reactive form values from view
   save() {
     console.log(this.jobForm.value);
+  }
+
+  //using Form builder
+  initializeForm() {
+    this.jobForma = this.formBuilder.group({
+      username: [''],
+      contact: this.formBuilder.group({
+        // this is netsted form group
+        address: [''],
+        phone: [''],
+      }),
+    });
+  }
+  savea() {
+    console.log(this.jobForma.value);
   }
 }

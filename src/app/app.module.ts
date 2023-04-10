@@ -10,7 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, FormBuilder],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
   declarations: [AppComponent, HelloComponent, ParentComponent, ChildComponent],
   bootstrap: [AppComponent],
 })
