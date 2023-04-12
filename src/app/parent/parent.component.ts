@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
@@ -39,7 +40,10 @@ export class ParentComponent implements OnInit {
 
   // create form control using fg and fc
   jobForm = new FormGroup({
-    username: new FormControl(''),
+    username: new FormControl('', [
+      Validators.required,
+      Validators.minLength('3'),
+    ]),
     contact: new FormControl(''),
   });
   // get the reactive form values from view

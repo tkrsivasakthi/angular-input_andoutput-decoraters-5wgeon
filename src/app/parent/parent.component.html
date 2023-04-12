@@ -11,7 +11,7 @@
   [fromParent]="sampledata"
   (toparent)="GetChildData($event)"
 ></app-child> -->
-<h1>********************************</h1>
+<h4>************Template driven form********************</h4>
 <form #user="ngForm" (ngSubmit)="onSend(user)">
   <label for="username">Username</label>
   <input ngModel type="text" name="username" #username="ngModel" required />
@@ -24,10 +24,21 @@
   <button type="submit" [disabled]="user.invalid">Submit</button>
 </form>
 
-<h1>**********Using Fc and FG**********************</h1>
+<h1>**********Reactive form Using Fc and FG**********************</h1>
 <form [formGroup]="jobForm" (ngSubmit)="save()">
   <label for="username">Username:</label>
   <input type="text" name="username" formControlName="username" />
+  <div
+    *ngIf="
+      jobForm.get('username').invalid &&
+      (jobForm.get('username').dirty || jobForm.get('username').touched)
+    "
+  >
+    <p *ngIf="jobForm.get('username').errors?.required">username is required</p>
+    <p *ngIf="jobForm.get('username').errors?.minlength">
+      username is should be 3 char min
+    </p>
+  </div>
   <br />
   <label for="contact">Contact</label>
   <input type="text" name="contact" formControlName="contact" /><br />
